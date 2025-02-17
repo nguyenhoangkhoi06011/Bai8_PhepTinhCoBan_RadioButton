@@ -24,11 +24,32 @@ namespace Bai8_PhepTinhCoBan_RadioButton
 
         private void btnTinh_Click(object sender, EventArgs e)
         {
-            double so1=double.Parse(txtso1.Text);
-            double so2=double.Parse(txtso2.Text);
-            if(rdbCong.Checked) 
+            double so1 = double.Parse(txtso1.Text);
+            double so2 = double.Parse(txtso2.Text);
+            if (rdbCong.Checked)
             {
-                txt
+                txtKq.Text = (so1 + so2).ToString();
+            }
+            if (rdbTru.Checked)
+            {
+                txtKq.Text = (so1 - so2).ToString();
+            }
+            if (rdbNhan.Checked)
+            {
+                txtKq.Text = (so1 * so2).ToString();
+            }
+            if (rdbChia.Checked)
+            {
+                if (so2 == 0)
+                {
+                    txtKq.Text = "loi chia 0";
+                }
+                else
+                {
+                    txtKq.Text = (so1 / so2).ToString();
+                }
+            }
         }
     }
 }
+ 
